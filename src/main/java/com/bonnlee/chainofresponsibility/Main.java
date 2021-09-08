@@ -12,12 +12,12 @@ public class Main {
 //        System.out.println(msg.getContent());
 
         MsgFilterChain msgFilterChain1 = new MsgFilterChain();
-        msgFilterChain1.add(new HTMLFilter()).add(new SmileFilter());
+        msgFilterChain1.add(new HTMLFilter()).add(new SensitiveWordFilter());
 
         MsgFilterChain msgFilterChain2 = new MsgFilterChain();
-        msgFilterChain2.add(new NumberFilter()).add(new SensitiveWordFilter());
+        msgFilterChain2.add(new NumberFilter()).add(new SmileFilter());
 
-        msgFilterChain2.add(msgFilterChain1).doFilter(msg);
+        msgFilterChain1.add(msgFilterChain2).doFilter(msg);
         System.out.println(msg);
     }
 

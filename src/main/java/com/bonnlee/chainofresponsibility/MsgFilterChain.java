@@ -13,10 +13,10 @@ public class MsgFilterChain implements MsgFilter{
     }
 
     @Override
-    public Message doFilter(Message msg){
-        msgFilterList.forEach(item ->{
-            item.doFilter(msg);
-        });
-        return msg;
+    public boolean doFilter(Message msg){
+        for (MsgFilter msgFilter : msgFilterList) {
+            if(!msgFilter.doFilter(msg)) return false;
+        }
+        return true;
     }
 }

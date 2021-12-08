@@ -22,7 +22,7 @@ public class Main {
     }
 
     /*
-    责任链模式旨在解耦，不同的类做不同的事，但可以将整个处理流程给串通
+    责任链模式旨在解耦，不同的类做不同的事，但可以将整个处理流程串通
      */
     private static String removeSensitiveContent(Message msg){
         String from = msg.getContent();

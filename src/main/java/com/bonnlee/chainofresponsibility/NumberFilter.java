@@ -8,6 +8,6 @@ public class NumberFilter implements MsgFilter {
         content = content.replace("1523333","1**3");
         msg.setContent(content);
         //boolean做控制 决定链条是否终止
-        return true;
+        return false;
     }
 }

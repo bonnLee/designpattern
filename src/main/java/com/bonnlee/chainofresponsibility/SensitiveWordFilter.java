@@ -9,6 +9,6 @@ public class SensitiveWordFilter implements MsgFilter {
         content = content.replace("996","被剥削式");
         msg.setContent(content);
         //boolean做控制 决定链条是否终止
-        return false;
+        return true;
     }
 }
